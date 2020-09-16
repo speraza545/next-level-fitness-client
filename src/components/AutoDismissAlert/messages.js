@@ -5,5 +5,18 @@ export default {
   signInFailure: 'Failed to sign in. Check your email and password and try again.',
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
-  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.'
+  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
+  characterCreatedSuccess: '👍',
+  characterCreatedFailure: 'Please fill out all forms 😩',
+  characterEditSuccess: 'Character edited successfully',
+  characterEditFailure: 'Only creator can edit this character',
+  characterIndexFailure: 'Oops... Try again',
+  characterDeleteSuccess: 'Character Deleted',
+  characterDeleteFailure: 'Only creator can delete this post',
+  workOutCreateSuccess: '👍',
+  workOutCreateFailure: 'Please fill out form 😩',
+  workOutEditSuccess: '',
+  workOutEditFailure: 'Only creator can edit this work out',
+  workOutDeleteSuccess: 'Work Out Deleted',
+  workOutDeleteFailure: 'Only creator can delete this work out'
 }

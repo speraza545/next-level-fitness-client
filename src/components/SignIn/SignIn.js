@@ -5,7 +5,7 @@ import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import OutlineButton from '../../components/shared/OutlineButton'
 
 class SignIn extends Component {
   constructor () {
@@ -33,7 +33,7 @@ class SignIn extends Component {
         message: messages.signInSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/posts'))
       .catch(error => {
         this.setState({ email: '', password: '' })
         msgAlert({
@@ -48,7 +48,7 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <div className="row">
+      <div className="row long">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Sign In</h3>
           <Form onSubmit={this.onSignIn}>
@@ -74,12 +74,12 @@ class SignIn extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button
-              variant="primary"
+            <OutlineButton
+              variant="outline-primary"
               type="submit"
             >
               Submit
-            </Button>
+            </OutlineButton>
           </Form>
         </div>
       </div>

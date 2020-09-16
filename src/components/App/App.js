@@ -8,6 +8,14 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
+import Characters from '../routes/Characters'
+import CharacterCreate from '../routes/CharacterCreate'
+import Character from '../routes/Character'
+import CharacterEdit from '../routes/CharacterEdit'
+import WorkOutCreate from '../routes/WorkOutCreate'
+import WorkOutEdit from '../routes/WorkOutEdit'
+import { withRouter } from 'react-router'
+import Home from '../routes/Home'
 
 class App extends Component {
   constructor () {
@@ -42,22 +50,41 @@ class App extends Component {
           />
         ))}
         <main className="container">
-          <Route path='/sign-up' render={() => (
+          <Route exact path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
-          <Route path='/sign-in' render={() => (
+          <Route exact path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
-          <AuthenticatedRoute user={user} path='/sign-out' render={() => (
+          <AuthenticatedRoute user={user} exact path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
+          <AuthenticatedRoute user={user} exact path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
+          <AuthenticatedRoute user={user} exact path='/characters' render={ () => (
+            <Characters user={user} />
+          )}/>
+          <AuthenticatedRoute user={user} exact path='/character-create' render={ () => (
+            <CharacterCreate user={user} msgAlert={this.msgAlert} setCreatedId={this.setCreatedId}/>
+          )}/>
+          <AuthenticatedRoute user={user} exact path='/characters/:id' render={ (props) => (
+            <Character {...props} user={user} msgAlert={this.msgAlert} setDeleted={this.setDeleted}/>
+          )}/>
+          <AuthenticatedRoute user={user} exact path='/characters/:id/edit' render={ (props) => (
+            <CharacterEdit {...props} user={user} msgAlert={this.msgAlert} setUpdated={this.setUpdated}/>
+          )}/>
+          <AuthenticatedRoute user={user} exact path='/characters/:id/work-outs' render={ (props) => (
+            <WorkOutCreate {...props} user={user} msgAlert={this.msgAlert} setCreated={this.setCreated}/>
+          )}/>
+          <AuthenticatedRoute user={user} exact path='/characters/:id/work-outs/:workoutid/edit' render={ (props) => (
+            <WorkOutEdit {...props} user={user} msgAlert={this.msgAlert} setUpdated={this.setUpdated}/>
+          )}/>
+          <Route exact path='/' component={Home} />
         </main>
       </Fragment>
     )
   }
 }
 
-export default App
+export default withRouter(App)
