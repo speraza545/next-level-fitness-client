@@ -1,1 +1,156 @@
 @import '~bootstrap/scss/bootstrap';
+
+.mage {
+  border-left-style: solid;
+  border-width: 5px;
+  border-color: #28007D;
+  border-radius: 5px;
+  background-color: #B18CFF;
+  font-size: 20px;
+  margin: 20px 0px 20px 0px;
+  padding: 0px 0px 0px 10px;
+  width: 400px;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #28007D;
+}
+
+.mage a {
+  color: #28007D;
+}
+
+.warrior {
+  border-left-style: solid;
+  border-width: 5px;
+  border-color: #950000;
+  border-radius: 5px;
+  background-color: #F8A3A3;
+  font-size: 20px;
+  margin: 20px 0px 20px 0px;
+  padding: 0px 0px 0px 10px;
+  width: 400px;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #950000;
+}
+
+.warrior a {
+  color: #950000;
+}
+
+.knight {
+  border-left-style: solid;
+  border-width: 5px;
+  border-color: #000000;
+  border-radius: 5px;
+  background-color: #A1A8B5;
+  font-size: 20px;
+  margin: 20px 0px 20px 0px;
+  padding: 0px 0px 0px 10px;
+  width: 400px;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #000000;
+}
+
+.knight a {
+  color: #000000;
+}
+
+.priest {
+  border-left-style: solid;
+  border-width: 5px;
+  border-color: #8C8C00;
+  border-radius: 5px;
+  background-color: #F5F58E;
+  font-size: 20px;
+  margin: 20px 0px 20px 0px;
+  padding: 0px 0px 0px 10px;
+  width: 400px;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #8C8C00;
+}
+
+.priest a {
+  color: #8C8C00;
+}
+
+.workOuts {
+  border-left-style: solid;
+  border-width: 5px;
+  border-color: blue;
+  border-radius: 5px;
+  background-color: #edf8ff;
+  font-size: 20px;
+  font-family: 'Merriweather Sans', sans-serif;
+  margin: 20px 0px 20px 0px;
+  padding: 10px 10px 10px 10px;
+  width: 400px;
+}
+
+.character {
+  border-left-style: solid;
+  border-width: 5px;
+  border-color: blue;
+  border-radius: 5px;
+  background-color: #cfecff;
+  font-size: 20px;
+  font-family: 'Merriweather Sans', sans-serif;
+  margin: 20px 0px 20px 0px;
+  padding: 5px 0px 10px 10px;
+  width: 400px;
+}
+
+form {
+  border-left-style: solid;
+  border-width: 5px;
+  border-color: blue;
+  border-radius: 5px;
+  background-color: #cfecff;
+  font-size: 20px;
+  font-family: 'Merriweather Sans', sans-serif;
+  margin: 20px 0px 20px 0px;
+  padding: 5px 0px 10px 10px;
+  width: 600px;
+}
+
+h4 {
+  text-decoration: underline;
+}
+
+body {
+  height: 1000px;
+  background-image: url(https://cutewallpaper.org/21/white-background-1080p/Manners-Of-Hate-Tu-web-de-noticias-y-actualidad-de-heavy-.png);
+  background-size: cover;
+}
+
+.home {
+  border-left-style: solid;
+  border-width: 5px;
+  border-color: blue;
+  border-radius: 5px;
+  background-color: #cfecff;
+  font-size: 20px;
+  font-family: 'Merriweather Sans', sans-serif;
+  padding: 5px 0px 5px 10px;
+  width: 400px;
+  height: 115px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -125px 0 0 -205px;
+}
+
+.long-logo {
+  height: 25%;
+  width: 30%;
+}
+
+.navbutton {
+  font-size: 100%;
+  margin-right: 20px;
+  white-space: nowrap;
+}
+
+.welcomeMessage {
+  white-space: nowrap;
+  margin-right: 30px;
+  font-size: 125%;
+}

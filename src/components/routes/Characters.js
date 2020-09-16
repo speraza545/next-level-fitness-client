@@ -42,9 +42,9 @@ class Characters extends Component {
     const characters = null
     if (this.state.characters) {
       const characters = this.state.characters.map(character => (
-        <div key={character._id} className='characters'>
+        <div key={character._id} className={character.class}>
           <Link to={`/characters/${character._id}`}>
-            {character.name}
+            {character.name} - {character.class}
           </Link>
         </div>
       ))

@@ -43,7 +43,7 @@ class CharacterCreate extends Component {
       headers: {
         'Authorization': `Bearer ${this.props.user.token}`
       },
-      data: { post: this.state.character }
+      data: { character: this.state.character }
     })
       .then(res => {
         this.props.msgAlert({
@@ -53,9 +53,9 @@ class CharacterCreate extends Component {
         })
         return res
       })
-      .then(res => this.setState({ createdId: res.data.post._id }))
+      .then(res => this.setState({ createdId: res.data.character._id }))
       .catch(res => this.props.msgAlert({
-        heading: 'Post Create Failed',
+        heading: 'Character Create Failed',
         message: messages.characterCreatedFailure,
         variant: 'danger'
       }))

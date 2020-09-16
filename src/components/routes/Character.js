@@ -126,7 +126,7 @@ class Character extends Component {
     return (
       <div className='long'>
         <h3>Character:</h3>
-        <div className='character'>
+        <div className={character.class}>
           <h4>{character.name}</h4>
           <p>{character.class}</p>
           <Link to={`/characters/${this.props.match.params.id}/edit`}>

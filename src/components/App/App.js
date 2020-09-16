@@ -65,7 +65,7 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/characters' render={ () => (
             <Characters user={user} />
           )}/>
-          <AuthenticatedRoute user={user} exact path='/character-create' render={ () => (
+          <AuthenticatedRoute user={user} exact path='/characters-create' render={ () => (
             <CharacterCreate user={user} msgAlert={this.msgAlert} setCreatedId={this.setCreatedId}/>
           )}/>
           <AuthenticatedRoute user={user} exact path='/characters/:id' render={ (props) => (

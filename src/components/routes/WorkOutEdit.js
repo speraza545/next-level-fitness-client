@@ -39,7 +39,7 @@ class WorkOutEdit extends Component {
   handleSubmit = event => {
     event.preventDefault()
     axios({
-      url: `${apiUrl}/characters/${this.props.match.params.id}/workOuts/${this.props.match.params.workoutid}`,
+      url: `${apiUrl}/characters/${this.props.match.params.id}/work-outs/${this.props.match.params.workoutid}`,
       method: 'PATCH',
       headers: {
         'Authorization': `Bearer ${this.props.user.token}`
