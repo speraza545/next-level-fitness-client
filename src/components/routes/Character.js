@@ -109,6 +109,7 @@ class Character extends Component {
         {this.state.character.workOuts.map(workOut => (
           <WorkOutIndex
             key={workOut._id}
+            character={this.state.character}
             date={workOut.date}
             type={workOut.type}
             title={workOut.title}
@@ -125,10 +126,21 @@ class Character extends Component {
     )
     return (
       <div className='long'>
-        <h3>Character:</h3>
-        <div className={character.class}>
-          <h4>{character.name}</h4>
-          <p>{character.class}</p>
+        <div>
+          <div className={character.class}>
+            <p>Name:<h2>{character.name}</h2></p>
+          </div>
+          <div className={character.class}>
+            <p>Class:<h3>{character.class}</h3></p>
+          </div>
+          <div className={character.class}>
+            <h4>Stats:</h4>
+            <p>Health: {character.health}</p>
+            <p>Strength: {character.strength}</p>
+            <p>Stamina: {character.stamina}</p>
+            <p>Magick: {character.magick}</p>
+            <p>Healing: {character.healing}</p>
+          </div>
           <Link to={`/characters/${this.props.match.params.id}/edit`}>
             <OutlineButton variant="outline-info">Edit</OutlineButton>
           </Link>
