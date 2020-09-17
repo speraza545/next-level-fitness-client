@@ -56,7 +56,8 @@ const CharacterForm = ({ character, handleSubmit, handleChange, cancelPath }) =>
 
         <label>Class:</label><br/>
         <select value={character.class} onChange={handleChange} name='class' required className="characterCreateInput">
-          <option defaultValue="Mage">Mage</option>
+          <option defaultValue=""></option>
+          <option value="Mage">Mage</option>
           <option value="Warrior">Warrior</option>
           <option value="Knight">Knight</option>
           <option value="Priest">Priest</option>
