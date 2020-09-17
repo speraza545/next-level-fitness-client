@@ -7,9 +7,9 @@ class Home extends Component {
         <p>
           Ready to embark on a magickal journey? <br/>
           <br/>
-          A break from the mundane?<br/>
+          A journey filled with drama, victory, and accomplishment?<br/>
           <br/>
-          a journey filled with drama, victory, and accomplishment?<br/>
+          A break from the mundane?<br/>
           <br/>
           Then listen closely friend, you are ready for.....
         </p>

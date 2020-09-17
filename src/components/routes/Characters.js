@@ -4,7 +4,6 @@ import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import { withRouter } from 'react-router'
 import messages from '../AutoDismissAlert/messages'
-import OutlineButton from '../shared/OutlineButton.js'
 
 // This will be our Books Index component (show all books)
 class Characters extends Component {
@@ -39,23 +38,23 @@ class Characters extends Component {
       // .catch(console.error)
   }
   render () {
-    const characters = null
+    let characters = null
     if (this.state.characters) {
-      const characters = this.state.characters.map(character => (
-        <div key={character._id} className={character.class}>
-          <Link to={`/characters/${character._id}`}>
-            {`${character.name} - ${character.class} - total work outs: ${character.workOuts.length}`}
-            {console.log(character.workOuts.length)}
-          </Link>
-        </div>
-      ))
+      characters = this.state.characters.map(character => {
+        if (character.owner === this.props.user._id) {
+          return (
+            <div key={character._id} className={character.class}>
+              <Link to={`/characters/${character._id}`}>
+                {`${character.name} - ${character.class} - total work outs: ${character.workOuts.length}`}
+              </Link>
+            </div>
+          )
+        }
+      })
       return characters
     }
     return (
       <div className='long'>
-        <Link to={`/characters/${this.props.match.params.id}/work-outs`}>
-          <OutlineButton variant="dark">Add Work Out</OutlineButton>
-        </Link>
         {characters}
       </div>
     )

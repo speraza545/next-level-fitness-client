@@ -24,6 +24,17 @@ class WorkOutEdit extends Component {
       characterId: null
     }
   }
+  componentDidMount () {
+    axios({
+      url: `${apiUrl}/characters/${this.props.match.params.id}/work-outs/${this.props.match.params.workoutid}`,
+      method: 'get',
+      headers: {
+        'Authorization': `Bearer ${this.props.user.token}`
+      }
+    })
+      .then(res => this.setState({ workOut: res.data.workOut }))
+      .catch(console.error)
+  }
 
   handleChange = event => {
     event.persist()

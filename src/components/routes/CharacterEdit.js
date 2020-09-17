@@ -24,7 +24,13 @@ class CharacterEdit extends Component {
     }
   }
   componentDidMount () {
-    axios(`${apiUrl}/characters/${this.props.match.params.id}`)
+    axios({
+      url: `${apiUrl}/characters/${this.props.match.params.id}`,
+      method: 'get',
+      headers: {
+        'Authorization': `Bearer ${this.props.user.token}`
+      }
+    })
       .then(res => this.setState({ character: res.data.character }))
       .catch(console.error)
   }

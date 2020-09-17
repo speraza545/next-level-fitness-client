@@ -35,7 +35,7 @@ class SignUp extends Component {
         message: messages.signUpSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/posts'))
+      .then(() => history.push('/characters'))
       .catch(error => {
         this.setState({ email: '', password: '', passwordConfirmation: '' })
         msgAlert({
@@ -51,13 +51,14 @@ class SignUp extends Component {
 
     return (
       <div className="row long">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign Up</h3>
-          <Form onSubmit={this.onSignUp}>
+        <div className="col-sm-10 col-md-8 mx-auto mt-5 signInForm">
+          <Form onSubmit={this.onSignUp} className='authForms'>
+            <Form.Label><h3>Please Sign up Below</h3></Form.Label>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email address:</Form.Label>
               <Form.Control
                 required
+                className="smaller-input"
                 type="email"
                 name="email"
                 value={email}
@@ -66,9 +67,10 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Password:</Form.Label>
               <Form.Control
                 required
+                className="smaller-input"
                 name="password"
                 value={password}
                 type="password"
@@ -77,9 +79,10 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Form.Group controlId="passwordConfirmation">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label>Password Confirmation:</Form.Label>
               <Form.Control
                 required
+                className="smaller-input"
                 name="passwordConfirmation"
                 value={passwordConfirmation}
                 type="password"
@@ -88,7 +91,7 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Button
-              variant="primary"
+              variant="dark"
               type="submit"
             >
               Submit
