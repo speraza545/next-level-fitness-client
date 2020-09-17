@@ -17,14 +17,11 @@ const WorkOutForm = ({ workOut, handleSubmit, handleChange, cancelPath }) => (
       /><br/>
 
       <label>Type:</label><br/>
-      <input
-        placeholder='Cardio or Strength Training?'
-        value={workOut.type}
-        required
-        name='type'
-        onChange={handleChange}
-        className="characterCreateInput"
-      /><br/>
+      <select value={workOut.type} onChange={handleChange} name='type' required className="characterCreateInput">
+        <option defaultValue=""></option>
+        <option value="strength">strength</option>
+        <option value="cardio">cardio</option>
+      </select><br/>
 
       <label>Title:</label><br/>
       <input

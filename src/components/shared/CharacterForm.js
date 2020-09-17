@@ -46,7 +46,7 @@ const CharacterForm = ({ character, handleSubmit, handleChange, cancelPath }) =>
       <form onSubmit={handleSubmit} className='authForms'>
         <label>Name:</label><br/>
         <input
-          placeholder='Choose your class'
+          placeholder='Choose your name'
           value={character.name}
           required
           name='name'

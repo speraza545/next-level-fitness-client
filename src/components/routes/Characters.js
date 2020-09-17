@@ -38,14 +38,14 @@ class Characters extends Component {
       }))
       // .catch(console.error)
   }
-
   render () {
     const characters = null
     if (this.state.characters) {
       const characters = this.state.characters.map(character => (
         <div key={character._id} className={character.class}>
           <Link to={`/characters/${character._id}`}>
-            {character.name} - {character.class}
+            {`${character.name} - ${character.class} - total work outs: ${character.workOuts.length}`}
+            {console.log(character.workOuts.length)}
           </Link>
         </div>
       ))
