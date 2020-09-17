@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import CharacterForm from '../shared/CharacterForm'
+import CharacterNameChangeForm from '../shared/CharacterNameChangeForm'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import { withRouter } from 'react-router'
@@ -76,7 +76,7 @@ class CharacterEdit extends Component {
 
     return (
       <div>
-        <CharacterForm
+        <CharacterNameChangeForm
           character={character}
           handleChange={handleChange}
           handleSubmit={handleSubmit}

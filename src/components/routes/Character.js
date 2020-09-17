@@ -6,6 +6,11 @@ import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import { withRouter } from 'react-router'
 import messages from '../AutoDismissAlert/messages'
+import Mage from './Mage.png'
+import Warrior from './Warrior.PNG'
+import Knight from './Knight.PNG'
+import Archer from './Archer.PNG'
+import Priest from './Priest.PNG'
 
 class Character extends Component {
   constructor (props) {
@@ -87,7 +92,6 @@ class Character extends Component {
     const newPath = `/characters/${this.props.match.params.id}/work-outs/${workOutId}/edit`
     this.props.history.push(newPath)
   }
-
   render () {
     const { character, deleted } = this.state
 
@@ -124,15 +128,38 @@ class Character extends Component {
         ))}
       </div>
     )
+    let currentClass = ''
+    if (character.class === 'Mage') {
+      currentClass = Mage
+    } else if (character.class === 'Warrior') {
+      currentClass = Warrior
+    } else if (character.class === 'Knight') {
+      currentClass = Knight
+    } else if (character.class === 'Priest') {
+      currentClass = Priest
+    } else if (character.class === 'Archer') {
+      currentClass = Archer
+    }
+
+    const imageSelector = (
+      <img src={currentClass}/>
+    )
+
     return (
-      <div className='long'>
-        <div>
+      <div className='row long'>
+        <div className='col-md-8 col-lg-6'>
           <div className={character.class}>
             <p>Name:</p><h2>{character.name}</h2>
+            <Link to={`/characters/${this.props.match.params.id}/edit`}>
+              <OutlineButton size="md" variant="dark">Edit Name</OutlineButton>
+            </Link>
+            <OutlineButton size="md" variant= "danger" onClick={this.destroyPost}>Delete Character</OutlineButton>
           </div>
           <div className={character.class}>
-            <p>Class:</p><h3>{character.class}</h3>
+            {imageSelector}
           </div>
+        </div>
+        <div className='col-md-8 col-lg-6'>
           <div className={character.class}>
             <h4>Stats:</h4>
             <p>Health: {character.health}</p>
@@ -140,19 +167,15 @@ class Character extends Component {
             <p>Stamina: {character.stamina}</p>
             <p>Magick: {character.magick}</p>
             <p>Healing: {character.healing}</p>
-            <Link to={`/characters/${this.props.match.params.id}/edit`}>
-              <OutlineButton size="md" variant="dark">Edit Character</OutlineButton>
-            </Link>
-            <OutlineButton size="md" variant= "danger" onClick={this.destroyPost}>Delete Character</OutlineButton>
           </div>
+          <div className={character.class}>
+            <h3>Work Outs:</h3>
+            <Link to={`/characters/${this.props.match.params.id}/work-outs`}>
+              <OutlineButton variant="dark">Add Work Out</OutlineButton>
+            </Link>
+          </div>
+          {workOutHtml}
         </div>
-        <div className={character.class}>
-          <h3>Work Outs:</h3>
-          <Link to={`/characters/${this.props.match.params.id}/work-outs`}>
-            <OutlineButton variant="dark">Add Work Out</OutlineButton>
-          </Link>
-        </div>
-        {workOutHtml}
       </div>
     )
   }
