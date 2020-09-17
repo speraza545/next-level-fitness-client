@@ -78,7 +78,7 @@ class CharacterCreate extends Component {
           character={character}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
-          cancelPath='/'
+          cancelPath='/characters'
         />
       </div>
     )

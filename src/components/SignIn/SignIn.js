@@ -48,14 +48,15 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <div className="row long">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign In</h3>
-          <Form onSubmit={this.onSignIn}>
+      <div className="row">
+        <div className="col-sm-10 col-md-8 mx-auto mt-5 signInForm">
+          <Form onSubmit={this.onSignIn} className='authForms'>
+            <Form.Label><h3>Please Sign in Below</h3></Form.Label>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email address:</Form.Label>
               <Form.Control
                 required
+                className="smaller-input"
                 type="email"
                 name="email"
                 value={email}
@@ -64,9 +65,10 @@ class SignIn extends Component {
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Password:</Form.Label>
               <Form.Control
                 required
+                className="smaller-input"
                 name="password"
                 value={password}
                 type="password"
@@ -75,8 +77,9 @@ class SignIn extends Component {
               />
             </Form.Group>
             <OutlineButton
-              variant="outline-primary"
+              variant="dark"
               type="submit"
+              className="authButton"
             >
               Submit
             </OutlineButton>

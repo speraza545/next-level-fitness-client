@@ -4,6 +4,7 @@ import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import { withRouter } from 'react-router'
 import messages from '../AutoDismissAlert/messages'
+import OutlineButton from '../shared/OutlineButton.js'
 
 // This will be our Books Index component (show all books)
 class Characters extends Component {
@@ -52,7 +53,9 @@ class Characters extends Component {
     }
     return (
       <div className='long'>
-        <h1>Characters:</h1>
+        <Link to={`/characters/${this.props.match.params.id}/work-outs`}>
+          <OutlineButton variant="dark">Add Work Out</OutlineButton>
+        </Link>
         {characters}
       </div>
     )

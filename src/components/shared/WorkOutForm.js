@@ -4,9 +4,8 @@ import OutlineButton from './OutlineButton.js'
 
 const WorkOutForm = ({ workOut, handleSubmit, handleChange, cancelPath }) => (
   <div className='long'>
-    <form onSubmit={handleSubmit}>
-      <label>Work Out:</label><br/>
-      <br/>
+    <form onSubmit={handleSubmit} className='authForms'>
+      <label><h3>Add Work Out:</h3></label><br/>
       <label>Date:</label><br/>
       <input
         placeholder='mm/dd/yyyy'
@@ -14,6 +13,7 @@ const WorkOutForm = ({ workOut, handleSubmit, handleChange, cancelPath }) => (
         required
         name='date'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
 
       <label>Type:</label><br/>
@@ -23,6 +23,7 @@ const WorkOutForm = ({ workOut, handleSubmit, handleChange, cancelPath }) => (
         required
         name='type'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
 
       <label>Title:</label><br/>
@@ -32,6 +33,7 @@ const WorkOutForm = ({ workOut, handleSubmit, handleChange, cancelPath }) => (
         required
         name='title'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
 
       <label>Reps:</label><br/>
@@ -41,6 +43,7 @@ const WorkOutForm = ({ workOut, handleSubmit, handleChange, cancelPath }) => (
         required
         name='reps'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
 
       <label>Minutes:</label><br/>
@@ -50,6 +53,7 @@ const WorkOutForm = ({ workOut, handleSubmit, handleChange, cancelPath }) => (
         required
         name='minutes'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
 
       <label>Notes:</label><br/>
@@ -59,12 +63,13 @@ const WorkOutForm = ({ workOut, handleSubmit, handleChange, cancelPath }) => (
         required
         name='content'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
 
       <br/>
-      <OutlineButton variant="success" type="submit">Submit</OutlineButton>
+      <OutlineButton size="md" variant="dark" type="submit" className="authButton">Submit</OutlineButton>
       <Link to={cancelPath}>
-        <OutlineButton variant="dark">Cancel</OutlineButton>
+        <OutlineButton size="md" variant="danger">Cancel</OutlineButton>
       </Link>
     </form>
   </div>

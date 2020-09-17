@@ -13,8 +13,8 @@ const WorkOutIndex = ({ character, date, type, title, reps, minutes, content, de
         Minutes:<br/> {minutes} <br/><br/>
         Notes:<br/> {content} <br/>
         <br/>
-        <OutlineButton size="sm" onClick={editWorkOut} variant="outline-info">Edit</OutlineButton>
-        <OutlineButton size="sm" onClick={deleteWorkOut} variant="outline-danger">Delete</OutlineButton>
+        <OutlineButton size="md" onClick={editWorkOut} variant="dark">Edit</OutlineButton>
+        <OutlineButton size="md" onClick={deleteWorkOut} variant="danger">Delete</OutlineButton>
       </div>
     )
   } else if (owner !== user) {

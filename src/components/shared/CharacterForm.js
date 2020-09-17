@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import OutlineButton from './OutlineButton.js'
 
 const CharacterForm = ({ character, handleSubmit, handleChange, cancelPath }) => (
-  <div className='long'>
-    <form onSubmit={handleSubmit}>
+  <div>
+    <form onSubmit={handleSubmit} className='authForms'>
       <label>Name:</label><br/>
       <input
         placeholder='Choose your class'
@@ -12,6 +12,7 @@ const CharacterForm = ({ character, handleSubmit, handleChange, cancelPath }) =>
         required
         name='name'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
 
       <label>Class:</label><br/>
@@ -21,6 +22,7 @@ const CharacterForm = ({ character, handleSubmit, handleChange, cancelPath }) =>
         required
         name='class'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
 
       <label>Health:</label><br/>
@@ -30,6 +32,7 @@ const CharacterForm = ({ character, handleSubmit, handleChange, cancelPath }) =>
         required
         name='health'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
 
       <label>Strength:</label><br/>
@@ -39,6 +42,7 @@ const CharacterForm = ({ character, handleSubmit, handleChange, cancelPath }) =>
         required
         name='strength'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
 
       <label>Stamina:</label><br/>
@@ -48,6 +52,7 @@ const CharacterForm = ({ character, handleSubmit, handleChange, cancelPath }) =>
         required
         name='stamina'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
 
       <label>Magick:</label><br/>
@@ -57,6 +62,7 @@ const CharacterForm = ({ character, handleSubmit, handleChange, cancelPath }) =>
         required
         name='magick'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
 
       <label>Healing:</label><br/>
@@ -66,11 +72,12 @@ const CharacterForm = ({ character, handleSubmit, handleChange, cancelPath }) =>
         required
         name='healing'
         onChange={handleChange}
+        className="characterCreateInput"
       /><br/>
-
-      <OutlineButton size="sm" variant="outline-success" type="submit">Submit</OutlineButton>
+      <br/>
+      <OutlineButton size="md" variant="dark" type="submit" className="authButton">Submit</OutlineButton>
       <Link to={cancelPath}>
-        <OutlineButton size="sm" variant="outline-dark">Cancel</OutlineButton>
+        <OutlineButton size="md" variant="danger">Cancel</OutlineButton>
       </Link>
     </form>
   </div>

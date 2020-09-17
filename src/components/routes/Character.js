@@ -140,16 +140,18 @@ class Character extends Component {
             <p>Stamina: {character.stamina}</p>
             <p>Magick: {character.magick}</p>
             <p>Healing: {character.healing}</p>
+            <Link to={`/characters/${this.props.match.params.id}/edit`}>
+              <OutlineButton size="md" variant="dark">Edit Character</OutlineButton>
+            </Link>
+            <OutlineButton size="md" variant= "danger" onClick={this.destroyPost}>Delete Character</OutlineButton>
           </div>
-          <Link to={`/characters/${this.props.match.params.id}/edit`}>
-            <OutlineButton variant="outline-info">Edit</OutlineButton>
-          </Link>
-          <Link to={`/characters/${this.props.match.params.id}/work-outs`}>
-            <OutlineButton variant="outline-info">add work out</OutlineButton>
-          </Link>
-          <OutlineButton variant= "outline-danger" onClick={this.destroyPost}>Delete Character</OutlineButton>
         </div>
-        <h3>Work Outs:</h3>
+        <div className={character.class}>
+          <h3>Work Outs:</h3>
+          <Link to={`/characters/${this.props.match.params.id}/work-outs`}>
+            <OutlineButton variant="dark">Add Work Out</OutlineButton>
+          </Link>
+        </div>
         {workOutHtml}
       </div>
     )
