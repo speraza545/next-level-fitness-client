@@ -128,10 +128,10 @@ class Character extends Component {
       <div className='long'>
         <div>
           <div className={character.class}>
-            <p>Name:<h2>{character.name}</h2></p>
+            <p>Name:</p><h2>{character.name}</h2>
           </div>
           <div className={character.class}>
-            <p>Class:<h3>{character.class}</h3></p>
+            <p>Class:</p><h3>{character.class}</h3>
           </div>
           <div className={character.class}>
             <h4>Stats:</h4>

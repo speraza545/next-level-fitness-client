@@ -75,7 +75,7 @@ class WorkOutCreate extends Component {
           workOut={workOut}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
-          cancelPath={`/posts/${this.props.match.params.id}`}
+          cancelPath={`/characters/${this.props.match.params.id}`}
         />
       </div>
     )

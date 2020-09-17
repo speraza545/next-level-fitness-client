@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
-.mage {
+.Mage {
   border-left-style: solid;
   border-width: 5px;
   border-color: #28007D;
@@ -14,11 +14,11 @@
   color: #28007D;
 }
 
-.mage a {
+.Mage a {
   color: #28007D;
 }
 
-.warrior {
+.Warrior {
   border-left-style: solid;
   border-width: 5px;
   border-color: #950000;
@@ -32,11 +32,11 @@
   color: #950000;
 }
 
-.warrior a {
+.Warrior a {
   color: #950000;
 }
 
-.knight {
+.Knight {
   border-left-style: solid;
   border-width: 5px;
   border-color: #000000;
@@ -50,11 +50,11 @@
   color: #000000;
 }
 
-.knight a {
+.Knight a {
   color: #000000;
 }
 
-.priest {
+.Priest {
   border-left-style: solid;
   border-width: 5px;
   border-color: #8C8C00;
@@ -68,8 +68,26 @@
   color: #8C8C00;
 }
 
-.priest a {
+.Priest a {
   color: #8C8C00;
+}
+
+.Archer {
+  border-left-style: solid;
+  border-width: 5px;
+  border-color: #1B5F00;
+  border-radius: 5px;
+  background-color: #B6E9A2;
+  font-size: 20px;
+  margin: 20px 0px 20px 0px;
+  padding: 0px 0px 0px 10px;
+  width: 400px;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #1B5F00;
+}
+
+.Archer a {
+  color: #1B5F00;
 }
 
 .workOuts {
