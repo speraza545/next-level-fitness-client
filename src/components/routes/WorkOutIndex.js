@@ -5,16 +5,23 @@ const WorkOutIndex = ({ character, date, type, title, reps, minutes, content, de
   let canEditAndUpdate = ''
   if (owner === user) {
     canEditAndUpdate = (
-      <div className={character.class}>
-        Date:<br/> {date} <br/><br/>
-        Type:<br/> {type} <br/><br/>
-        Title:<br/> {title} <br/><br/>
-        Reps:<br/> {reps} <br/><br/>
-        Minutes:<br/> {minutes} <br/><br/>
-        Notes:<br/> {content} <br/>
-        <br/>
-        <OutlineButton size="md" onClick={editWorkOut} variant="dark">Edit</OutlineButton>
-        <OutlineButton size="md" onClick={deleteWorkOut} variant="danger">Delete</OutlineButton>
+      <div className='accordionSection'>
+        <button className='accordion'>
+          <p className='accordionTitle'>{date}</p>
+        </button>
+        <div className='accordionContent'>
+          <div className='accordionText'>
+            Date:<br/> {date} <br/><br/>
+            Type:<br/> {type} <br/><br/>
+            Title:<br/> {title} <br/><br/>
+            Reps:<br/> {reps} <br/><br/>
+            Minutes:<br/> {minutes} <br/><br/>
+            Notes:<br/> {content} <br/>
+            <br/>
+            <OutlineButton size="md" onClick={editWorkOut} variant="dark">Edit</OutlineButton>
+            <OutlineButton size="md" onClick={deleteWorkOut} variant="danger">Delete</OutlineButton>
+          </div>
+        </div>
       </div>
     )
   } else if (owner !== user) {
@@ -31,3 +38,37 @@ const WorkOutIndex = ({ character, date, type, title, reps, minutes, content, de
 }
 
 export default WorkOutIndex
+
+// import React from 'react'
+// import OutlineButton from '../shared/OutlineButton.js'
+//
+// const WorkOutIndex = ({ character, date, type, title, reps, minutes, content, deleteWorkOut, editWorkOut, owner, user }) => {
+//   let canEditAndUpdate = ''
+//   if (owner === user) {
+//     canEditAndUpdate = (
+//       <div className={character.class}>
+//         Date:<br/> {date} <br/><br/>
+//         Type:<br/> {type} <br/><br/>
+//         Title:<br/> {title} <br/><br/>
+//         Reps:<br/> {reps} <br/><br/>
+//         Minutes:<br/> {minutes} <br/><br/>
+//         Notes:<br/> {content} <br/>
+//         <br/>
+//         <OutlineButton size="md" onClick={editWorkOut} variant="dark">Edit</OutlineButton>
+//         <OutlineButton size="md" onClick={deleteWorkOut} variant="danger">Delete</OutlineButton>
+//       </div>
+//     )
+//   } else if (owner !== user) {
+//     canEditAndUpdate = (
+//       <div className='workOuts'>
+//         {content}
+//       </div>
+//     )
+//   }
+//
+//   return (
+//     canEditAndUpdate
+//   )
+// }
+//
+// export default WorkOutIndex
