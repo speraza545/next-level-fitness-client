@@ -1,21 +1,32 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import OutlineButton from '../shared/OutlineButton.js'
+import Chevron from '../Chevron'
 
 const WorkOutIndex = ({ character, date, type, title, reps, minutes, content, deleteWorkOut, editWorkOut, owner, user }) => {
+  const [setActive, setActiveState] = useState('')
+  const [setHeight, setHeightState] = useState('0px')
+  const [setRotate, setRotateState] = useState('accordion__icon')
+
+  const content2 = useRef(null)
+
+  function toggleAccordion () {
+    setActiveState(setActive === '' ? 'active' : '')
+    setHeightState(setActive === 'active' ? '0px' : `${content2.current.scrollHeight}px`)
+    setRotateState(setActive === 'active' ? 'accordion__icon' : 'accordion__icon rotate')
+  }
+
   let canEditAndUpdate = ''
   if (owner === user) {
     canEditAndUpdate = (
-      <div className='accordionSection'>
-        <button className='accordion'>
-          <p className='accordionTitle'>{date}</p>
+      <div className='accordion__section'>
+        <button className={`accordion ${setActive}`} onClick={toggleAccordion}>
+          <p className='accordion__title'>Work Out Date: {date} - Type: {type} - Mins: {minutes}</p>
+          <Chevron className={ `${setRotate}` } width={10} fill={'#000000'} />
         </button>
-        <div className='accordionContent'>
-          <div className='accordionText'>
-            Date:<br/> {date} <br/><br/>
-            Type:<br/> {type} <br/><br/>
+        <div ref={content2} style={{ maxHeight: `${setHeight}` }} className='accordion__content'>
+          <div className='accordion__text'>
             Title:<br/> {title} <br/><br/>
             Reps:<br/> {reps} <br/><br/>
-            Minutes:<br/> {minutes} <br/><br/>
             Notes:<br/> {content} <br/>
             <br/>
             <OutlineButton size="md" onClick={editWorkOut} variant="dark">Edit</OutlineButton>
@@ -38,37 +49,3 @@ const WorkOutIndex = ({ character, date, type, title, reps, minutes, content, de
 }
 
 export default WorkOutIndex
-
-// import React from 'react'
-// import OutlineButton from '../shared/OutlineButton.js'
-//
-// const WorkOutIndex = ({ character, date, type, title, reps, minutes, content, deleteWorkOut, editWorkOut, owner, user }) => {
-//   let canEditAndUpdate = ''
-//   if (owner === user) {
-//     canEditAndUpdate = (
-//       <div className={character.class}>
-//         Date:<br/> {date} <br/><br/>
-//         Type:<br/> {type} <br/><br/>
-//         Title:<br/> {title} <br/><br/>
-//         Reps:<br/> {reps} <br/><br/>
-//         Minutes:<br/> {minutes} <br/><br/>
-//         Notes:<br/> {content} <br/>
-//         <br/>
-//         <OutlineButton size="md" onClick={editWorkOut} variant="dark">Edit</OutlineButton>
-//         <OutlineButton size="md" onClick={deleteWorkOut} variant="danger">Delete</OutlineButton>
-//       </div>
-//     )
-//   } else if (owner !== user) {
-//     canEditAndUpdate = (
-//       <div className='workOuts'>
-//         {content}
-//       </div>
-//     )
-//   }
-//
-//   return (
-//     canEditAndUpdate
-//   )
-// }
-//
-// export default WorkOutIndex

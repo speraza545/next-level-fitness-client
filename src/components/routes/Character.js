@@ -147,7 +147,7 @@ class Character extends Component {
 
     return (
       <div className='row long'>
-        <div className='col-md-8 col-lg-6'>
+        <div className='col-md-12 col-lg-6'>
           <div className={character.class}>
             <p>Name:</p><h2>{character.name}</h2>
             <Link to={`/characters/${this.props.match.params.id}/edit`}>
@@ -157,10 +157,6 @@ class Character extends Component {
           </div>
           <div className={character.class}>
             {imageSelector}
-          </div>
-        </div>
-        <div className='col-md-8 col-lg-6'>
-          <div className={character.class}>
             <h4>Stats:</h4>
             <p>Health: {character.health}</p>
             <p>Strength: {character.strength}</p>
@@ -168,11 +164,14 @@ class Character extends Component {
             <p>Magick: {character.magick}</p>
             <p>Healing: {character.healing}</p>
           </div>
-          <div className={character.class}>
-            <h3>Work Outs:</h3>
+        </div>
+        <div className='col-md-12 col-lg-6'>
+          <div className='workOutTitle'>
+            <h3 id='workOut'>Work Outs:</h3>
             <Link to={`/characters/${this.props.match.params.id}/work-outs`}>
-              <OutlineButton variant="dark">Add Work Out</OutlineButton>
+              <OutlineButton variant="dark" className='authButton'>Add Work Out</OutlineButton>
             </Link>
+            <p></p>
           </div>
           {workOutHtml}
         </div>
