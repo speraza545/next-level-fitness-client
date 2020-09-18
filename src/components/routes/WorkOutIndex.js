@@ -21,7 +21,7 @@ const WorkOutIndex = ({ character, date, type, title, reps, minutes, content, de
       <div className='accordion__section'>
         <button className={`accordion ${setActive}`} onClick={toggleAccordion}>
           <p className='accordion__title'>Work Out Date: {date} - Type: {type} - Mins: {minutes}</p>
-          <Chevron className={ `${setRotate}` } width={10} fill={'#000000'} />
+          <Chevron className={ `${setRotate}` } width={10} fill={'#a3aaad'} />
         </button>
         <div ref={content2} style={{ maxHeight: `${setHeight}` }} className='accordion__content'>
           <div className='accordion__text'>
