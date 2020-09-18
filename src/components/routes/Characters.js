@@ -38,7 +38,7 @@ class Characters extends Component {
       // .catch(console.error)
   }
   render () {
-    let characters = null
+    let characters = []
     if (this.state.characters) {
       characters = this.state.characters.map(character => {
         if (character.owner === this.props.user._id) {
