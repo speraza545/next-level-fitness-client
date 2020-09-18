@@ -8,6 +8,13 @@ The API is located here: [API](https://github.com/skmidk/next-level-fitness-api)
 [link to wireframe](https://imgur.com/a/GP2MLQW)
 [link to erd](https://imgur.com/a/G5guADu)
 
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/LcwF4Bt" data-context="false" ><a href="//imgur.com/a/LcwF4Bt"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/B8oZoHV" data-context="false" ><a href="//imgur.com/a/B8oZoHV"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/BQp7IUa" data-context="false" ><a href="//imgur.com/a/BQp7IUa"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+
 ## Installation
 
 1. Fork and clone this repo
@@ -22,7 +29,7 @@ This application uses javascript, html, css, bootstrap, express, mongoose and re
 
 ## Unsolved Problems
 
-I would like to be able to add a friend feature, so you can see your friends characters. I was also thinking about adding a leveling system and xp bar based on total number of minutes the character worked out, adding a stat boost to the player. I also need better characters, it was a sturggle to find characters hitting all the classes, designed by the same artist, and for free.
+I would like to be able to add a friend feature, so you can see your friends characters. I was also thinking about adding a leveling system and xp bar based on total number of minutes the character worked out, adding a stat boost to the player. I also need better characters, it was a struggle to find characters hitting all the classes, designed by the same artist, and for free.
 
 ## Planning:
 
