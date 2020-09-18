@@ -1,129 +1,53 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# What does this app do?
+This app was designed as a fun way to stay engaged with working out.
+It allows you to create a character and track your work outs, as you
+add workouts, your character stats start to scale based on the type of workout, how long you did the activity for, and the class you picked at the start.
 
-# react-auth-template
+The API is located here: [API](https://github.com/skmidk/next-level-fitness-api)
 
-A front-end framework template for starting projects with a recent version of
-either the [Rails API Template](https://git.generalassemb.ly/ga-wdi-boston/rails-api-template)
-or the [Express API Template](https://git.generalassemb.ly/ga-wdi-boston/express-api-template).
+[link to wireframe](https://imgur.com/a/GP2MLQW)
+[link to erd](https://imgur.com/a/G5guADu)
 
 ## Installation
 
-1. [Download](../../archive/master.zip) this template.
-1. Unzip and rename the template directory (`unzip ~/Downloads/react-auth-template-master.zip`).
+1. Fork and clone this repo
 1. Move into the new project and `git init`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace `react-auth-template` in `package.json` with your
-   projects name.
-1. Replace the `"homepage"` field in `package.json` with your (public) Github
-   account name and repository name.
 1. Install dependencies with `npm install`.
 1. `git add` and `git commit` your changes.
 1. Run the development server with `npm start`.
 
-## Deployment
+## Technologies Used:
 
-Before deploying, you first need to make sure the `homepage` key in your
-`package.json` is pointing to the correct value. It should be the url of your
-deployed application.
+This application uses javascript, html, css, bootstrap, express, mongoose and react.
 
-To deploy you should first make sure you are on the `master` branch with a
-clean working directory, then you can run `npm run deploy` and wait to see if
-it runs successfully.
+## Unsolved Problems
 
-## About
+I would like to be able to add a friend feature, so you can see your friends characters. I was also thinking about adding a leveling system and xp bar based on total number of minutes the character worked out, adding a stat boost to the player. I also need better characters, it was a sturggle to find characters hitting all the classes, designed by the same artist, and for free.
 
-This template is derived from GA Boston's [react-template](https://git.generalassemb.ly/ga-wdi-boston/react-template).
-Most of the development dependencies, such as linters, SCSS compiler, Webpack
-config, NPM scripts, etc in this repo come from there.
+## Planning:
 
-It includes all the components and routes needed to sign up, sign in, change
-passwords, and sign out of an API built with either template linked above, with
-no need for modification.
+For me, the planning process was definitely a joy, as a gamer myself, it was great to make a project that really resonated with me. My first concern was planning out the character classes and baseline stats to figure out what information I would want stored for the character. After that, it was a matter of picking the general theme for the website.
 
-**NOTE**: You should customize the included components to suit you app! They're
-provided as a guide and a bare minimum of functionality and style. Consider
-changing the provided SCSS styles, modifying the auth code, improving the flash
-messages, etc.
+With this done, I moved onto completing the api with a few extra features so I had flexibility with creativity once I got into the front end.
 
-## Structure
+When approaching the front end, I decided a more "cartoony" vibe was appealing, and set about trying to find characters and a background for them, picking color schemes for the classes, then built out a basic shell to hold all the information coming too and from the api. With this basic shell, I was then able to focus on making sure data transposed properly. After assuring that, I moved on to just styling to add a little more flair to the game, as well as some user conveniences such as total workouts being seen without having to open the character as a sort of "sudo-level" feature.
 
-The top-level `App` component stores the currently authenticated
-user in state, as well as data related to the flash messages. `App` renders the
-`Header` component, and a list of routes, each of which render a component from
-`src/components`. The `src/api` directory has a component file, `auth.js`, which
-contains all the needed `axios` calls pertaining to authentication.
+## Problem Solving:
 
-You can follow this pattern in your app as well. For instance, if you are making
-an app that keeps track of books, you might want a `src/api/books.js`, which
-contains its own `axios` call pertaining to your books resource CRUD actions.
-Using a separate directory within `components` for each individual component you
-add makes it easy to locate and update components and has the added benefit of
-making it easy to create custom styles that apply to that specific component.
-To apply component specific styles, add a file to the component's directory such
-as `ComponentName.scss` and then import it directly into the component with
-`import './ComponentName.scss'`.  This will keep your styles modularized and
-make it easier to make changes at the component level.
+Finding new problems tends to be my favorite as they lead to new solutions, and new ways of thinking. I can definitely say that I had my fair share of problems with this app at first. Sometimes it was my axios calls being slightly off, or missing a bracket somewhere. Other times it was utilizing new things I never tried before like the accordion feature for the workouts. Or making the drop down to select ones class. This lead to youtube tutorials, stack overflow, google, and a decent amount of coffee. Generally I will just make a new branch and start typing even if I do not fully understand the direction I am going with the code I'm writing to check what gets output or what changes, to better help myself understand how things work and what CAN be done.
 
-## Features
+### User Stories
 
-### `<AuthenticatedRoute />`
+as a user I want to be able to create a character to track my progress
 
-This template contains a handy component for creating routes that require a
-user to be authenticated before visiting. This component lives in
-`src/auth/components/AuthenticatedRoute.js` and is already required in `App`.
-It's a thin wrapper around React Router's `<Route />` component. The only
-difference is that it expects a prop called `user`, and if that prop is falsy,
-it will render a `<Redirect />` that takes the user to `/`. **To use
-it, you must pass it the user as a prop!**
+as a user, I want to be able to see my character stats update after I input a workout.
 
-It supports both the `component=` and `render=` attributes, but like `<Route />`
-it will not forward props to the component if you use `component=`.
+as a user, i want to be able to create a new character so I can try them all out.
 
-### `<AutoAlertDismiss />` Component
+as a user, I want a character that mimics the stats of the type of workouts I plan to do.
 
-This template also already contains a component that displays user messages.
-Messages are configurable via redux actions.  This component can be found in
-`src/components/AutoAlertDismiss/AutoAlertDismiss.js`. **There is no need to add
-this component to your app. It is already required in `App`.**  A single
-component instance is used to manage all alerts application-wide.
+as a user, I want to be able to delete a character
 
-The alert can be used by passing the `alertMsg` method to a rendered route.  The
-`alertMsg` method expects an object with a `heading`, `message`, and a `variant` property.
+as a user I want to be able to edit my workouts.
 
-Use this component in conjunction with the `messages.js` file in the same
-directory to create and manage all of your application messages in one place.
-
-The `variant` property must be a Bootstrap alert variant, as this component is merely a
-wrapper around the [react-bootstrap Alert
-component](https://react-bootstrap.github.io/components/alerts/).  The types it
-will accept are: 'primary', 'secondary', 'success', 'danger', 'warning', 'info',
-'light', and 'dark'.
-
- To change the duration of the message, replace `5000` with a value of your
- choice (in milliseconds) in this component's `componentDidMount` method.
-
-### `src/apiConfig.js`
-
-Just like in
-[browser-template](https://git.generalassemb.ly/ga-wdi-boston/browser-template),
-this file will determine whether you're in a production or development
-environment and choose an API URL accordingly. Don't forget to replace the
-`production` URL with your deployed API's URL.
-
-## Tasks
-
-Developers should run these often!
-
-- `npm run nag`: runs code quality analysis tools on your code and complains.
-- `npm run make-standard`: reformats all your code in the JavaScript Standard
-  Style.
-- `npm run start`: generates bundles, watches, and livereloads.
-- `npm run build`: place bundled styles and scripts where `index.html` can find
-    them
-- `npm run deploy`: builds and deploys master branch
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+as a user I want to be able to delete my workouts.
