@@ -8,11 +8,11 @@ The API is located here: [API](https://github.com/skmidk/next-level-fitness-api)
 [link to wireframe](https://imgur.com/a/GP2MLQW)
 [link to erd](https://imgur.com/a/G5guADu)
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/LcwF4Bt" data-context="false" ><a href="//imgur.com/a/LcwF4Bt"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+![website image 1](https://i.imgur.com/aSTmwB7.png)
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/B8oZoHV" data-context="false" ><a href="//imgur.com/a/B8oZoHV"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+![website Image 2](https://i.imgur.com/9F5L1jn.png)
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/BQp7IUa" data-context="false" ><a href="//imgur.com/a/BQp7IUa"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+![website image 3](https://i.imgur.com/N89b3m5.png)
 
 
 ## Installation
