@@ -38,24 +38,25 @@ class Characters extends Component {
       // .catch(console.error)
   }
   render () {
-    let characters = []
-    if (this.state.characters) {
-      characters = this.state.characters.map(character => {
-        if (character.owner === this.props.user._id) {
-          return (
-            <div key={character._id} className={character.class}>
-              <Link to={`/characters/${character._id}`}>
-                {`${character.name} - ${character.class} - total work outs: ${character.workOuts.length}`}
-              </Link>
-            </div>
-          )
-        }
-      })
-      return characters
-    }
+    const characters = this.state.characters.map(character => {
+      return (
+        <div key={character._id} className={character.class}>
+          <Link to={`/characters/${character._id}`}>
+            {`${character.name} - ${character.class} - total work outs: ${character.workOuts.length}`}
+          </Link>
+        </div>
+      )
+    })
+
+    const createACharacter = (
+      <div className='home'>
+        Please Create a Character Above
+      </div>
+    )
+    const showMessage = characters.length > 0 ? characters : createACharacter
     return (
-      <div className='long'>
-        {characters}
+      <div>
+        {showMessage}
       </div>
     )
   }
