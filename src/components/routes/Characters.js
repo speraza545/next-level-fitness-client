@@ -49,7 +49,7 @@ class Characters extends Component {
     })
 
     const createACharacter = (
-      <div className='home'>
+      <div className='home fade-in'>
         Please Create a Character Above
       </div>
     )
