@@ -3,10 +3,13 @@ This app was designed as a fun way to stay engaged with working out.
 It allows you to create a character and track your work outs, as you
 add workouts, your character stats start to scale based on the type of workout, how long you did the activity for, and the class you picked at the start.
 
-The API is located here: [API](https://github.com/skmidk/next-level-fitness-api)
+The API is located here:  
+[API](https://github.com/skmidk/next-level-fitness-api)  
+[link to wireframe](https://imgur.com/a/GP2MLQW)  
+[link to erd](https://imgur.com/a/G5guADu)  
+[Deployed Api](https://next-level-fitness.herokuapp.com/)  
+[Deployed Client](https://skmidk.github.io/next-level-fitness-client/#/)  
 
-[link to wireframe](https://imgur.com/a/GP2MLQW)
-[link to erd](https://imgur.com/a/G5guADu)
 
 ![website image 1](https://i.imgur.com/aSTmwB7.png)
 
